@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class maineo {
@@ -16,7 +15,11 @@ public class maineo {
         xd.add(ci4);
 
         Predicate<ciudad> cokbo= c->c.getNombre().startsWith("E")&&c.getNumHabiitantes()>100000;
-        xd.stream().filter(cokbo).forEach((n)-> System.out.println(n));
+        mostrarciudad(xd, cokbo);
 
+    }
+
+    public static void mostrarciudad(ArrayList<ciudad> array,Predicate<ciudad> p){
+        array.stream().filter(p).forEach((n)-> System.out.println(n));
     }
 }
